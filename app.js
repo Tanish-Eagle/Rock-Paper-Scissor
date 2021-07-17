@@ -1,4 +1,7 @@
 function getRandomInt(min, max) {
+    /*
+    This function is used for the generating the random numbers with the provided arguments.
+    */
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
@@ -6,6 +9,12 @@ function getRandomInt(min, max) {
 let playerChoice = null;
 let computerChoice = null;
 function computerPlay() {
+    /*
+     Using the random number generator for randomizing the choice of the computer.
+    
+     The choice variable is passed to the switch statement, which returns the string depending upon the case.
+     */
+
     let choice = getRandomInt(1, 3);
     switch (choice) {
         case 1:
@@ -20,6 +29,10 @@ function computerPlay() {
 }
 
 function playRound(playerChoice, computerChoice) {
+    /*
+    After receiving the function arguments, the conditions check and compare the playerChoice, and computerChoice, and return a string depending on the condition.
+    */
+
     if (playerChoice === "rock" && computerChoice === "scissors") {
         return "You win! Rock beats scissors.";
     }
@@ -44,6 +57,14 @@ function playRound(playerChoice, computerChoice) {
 }
 
 function game() {
+
+    /*
+    two score keeping variables are declared, one for computer, one for player.
+    
+    a loop runs for five rounds, and score keeping variables are incremented with one number depending on who won.
+    
+    After which, they are compared, and whoever has the greater score, wins. An alert function prints the results.
+    */
     let playerScore = 0;
     let computerScore = 0;
     for (let i = 1; i <= 5; i++) {
